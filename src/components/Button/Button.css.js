@@ -1,6 +1,6 @@
 // src/components/Button/Button.css.js
 import { style } from '@vanilla-extract/css';
-import { themeContract } from '../../themes/themeContract.css';
+import { theme } from '../../themes/theme.css';
 
 export const button = style({
   padding: '0.5rem 1rem',
@@ -8,7 +8,6 @@ export const button = style({
   fontWeight: 'bold',
   border: 'none',
   cursor: 'pointer',
-  backgroundColor: themeContract.color.primary,
-  color: themeContract.color.text,
-  transition: 'background-color 0.3s ease',
+  backgroundColor: theme.colors.solid.primary[6],
+  color: theme.colors.solid.base[12]
 });

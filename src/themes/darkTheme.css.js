@@ -1,11 +1,30 @@
 // src/themes/darkTheme.css.js
 import { createTheme } from '@vanilla-extract/css';
-import { themeContract } from './themeContract.css';
+import { theme } from './theme.css';
 
-export const darkTheme = createTheme(themeContract, {
-  color: {
-    background: '#1e1e1e',
-    text: '#ffffff',
-    primary: '#0d6efd',
-  },
+import {dark} from '@spiffdog/spiffy-colors'
+
+export const darkTheme = createTheme(theme, {
+  ...theme,
+  colors: {
+    ...theme.colors,
+    solid: {
+      alert: {...dark.tomato},
+      base: {...dark.slate},
+      primary: {...dark.blue},
+      success: {...dark.green},
+      warning: {...dark.amber},
+    },
+    alpha: {
+      alert: {...dark.tomatoA},
+      base: {...dark.slateA},
+      primary: {...dark.blueA},
+      success: {...dark.greenA},
+      warning: {...dark.amberA},
+    },
+    palette: {
+      ...theme.colors.palette,
+      ...dark
+    },
+  }
 });
